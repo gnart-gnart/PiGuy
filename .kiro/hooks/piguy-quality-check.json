@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "PiGuy Quality Check",
+      "trigger": "PostFileSave",
+      "action": {
+        "type": "command",
+        "command": "ruff check . && ruff format --check ."
+      },
+      "description": "Run Python linting, formatting checks, and tests whenever a Python source or test file is saved.",
+      "matcher": "^(src|tests)/.*\\.py$",
+      "timeout": 0,
+      "enabled": true
+    }
+  ]
+}
